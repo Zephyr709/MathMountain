@@ -1,0 +1,32 @@
+/* || General Styles */
+* {
+    border: 1px solid black;
+}
+
+/* || Header Styles */
+header {
+    height: 100px;
+}
+
+/* || Navbar Styles */
+nav {
+    height: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+/* || Main Content Styles */
+main {
+    height: 1000px;
+    width: 65%;
+    margin: auto;
+}
+
+/* || Footer Styles */
+
+footer {
+    height: 50px;
+}
