@@ -25,29 +25,33 @@ body {
 
 /* || Header Styles */
 header {
+    background-color: #293241;
+    color:#ee6c4d;
+}
+#header-container {
+    height: 150px;
     display: flex ;
     align-items: center;
     justify-content: center;
     flex-flow: column;
-    background-color: #293241;
-    color:#ee6c4d;
+    background-image: url(images/MathMountainLogo128px.png);
+    background-repeat: no-repeat;
+    background-position: 25%;
 }
-#site-name {
-    display: flex ;
-    align-items: center;
-    justify-content: center;
-}
+
+
 
 /* || Navbar Styles */
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
 }
 nav button {
+    flex:auto;
     height: 100%;
-    width: 25%;
-    padding:10px;
+    padding: 10px;
    
     
 }
@@ -65,6 +69,14 @@ section {
     padding: 10px;
     margin: 10px;
    
+}
+
+p, h2, h3 {
+    padding: 5px;
+}
+
+p {
+    color: white;
 }
 
 /* || Footer Styles */
