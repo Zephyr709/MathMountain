@@ -1,5 +1,10 @@
 /* Color Scheme
-
+dark --> light
+color 1: #3d5a80 dark blue
+color 2: #98c1d9 blue
+color 3: #e0fbfc light blue
+color 4: #ee6c4d  orange
+color 5: #293241 dark grey
 */
 
 
@@ -8,10 +13,13 @@
     border: 1px solid black;
     box-sizing:border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 body {
     margin:auto;
+    background-color: #293241;
+    color:#ee6c4d;
     
 }
 
@@ -21,6 +29,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #293241;
+    color:#ee6c4d;
 }
 
 /* || Navbar Styles */
@@ -43,8 +53,7 @@ main {
     height: 100vh;
     width: 75%;
     margin: auto;
-    
-   
+
 }
 section {
     height: 90%;
@@ -62,6 +71,7 @@ footer {
     left: 0;
     bottom:0;
     width:100%;
-    background-color: rgba(27,27,27,1);
-    color:white;
+    background-color: #293241;
+    color:#ee6c4d;
+    
 }
