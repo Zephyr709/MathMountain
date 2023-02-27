@@ -16,6 +16,7 @@ color 5: #293241 dark grey
     
 }
 
+
 body {
     margin:auto;
     background-color: #293241;
@@ -36,7 +37,7 @@ header {
     flex-flow: column;
     background-image: url(images/MathMountainLogo128px.png);
     background-repeat: no-repeat;
-    background-position: 25%;
+    background-position: 5%;
 }
 
 
