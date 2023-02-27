@@ -1,7 +1,18 @@
+/* Color Scheme
+
+*/
+
+
 /* || General Styles */
 * {
     border: 1px solid black;
     box-sizing:border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin:auto;
+    
 }
 
 /* || Header Styles */
@@ -14,7 +25,6 @@ header {
 
 /* || Navbar Styles */
 nav {
-    height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,21 +32,36 @@ nav {
 nav button {
     height: 100%;
     width: 25%;
+    padding:10px;
+   
+    
 }
 
 
 /* || Main Content Styles */
 main {
-    height: 1000px;
-    width: 65%;
+    height: 100vh;
+    width: 75%;
     margin: auto;
+    
+   
 }
 section {
-    height: calc(100% - 30px);
+    height: 90%;
+    padding: 10px;
+    margin: 10px;
+   
 }
 
 /* || Footer Styles */
 
 footer {
     height: 50px;
+    text-align: center;
+    position:fixed;
+    left: 0;
+    bottom:0;
+    width:100%;
+    background-color: rgba(27,27,27,1);
+    color:white;
 }
