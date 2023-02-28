@@ -12,7 +12,9 @@ color 5: #293241 dark grey
     box-sizing:border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+html {
+    min-width:480px;
+}
 
 body {
     margin:auto;
