@@ -1,5 +1,4 @@
 /* Color Scheme
-dark --> light
 color 1: #3d5a80 dark blue
 color 2: #98c1d9 blue
 color 3: #e0fbfc light blue
@@ -10,10 +9,8 @@ color 5: #293241 dark grey
 
 /* || General Styles */
 * {
-    
     box-sizing:border-box;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    
 }
 
 
