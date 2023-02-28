@@ -54,10 +54,13 @@ nav button {
     flex:auto;
     height: 100%;
     padding: 10px;
+    background-color:#98c1d9 ;
    
-    
 }
-
+nav button:hover {
+    background-color: #3d5a80;
+    color:white;
+}
 
 /* || Main Content Styles */
 main {
