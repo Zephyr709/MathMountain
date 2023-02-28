@@ -48,13 +48,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-top: 10px;
     
 }
 nav button {
     flex:auto;
     height: 100%;
     padding: 10px;
-    background-color:#98c1d9 ;
+    margin:5px;
+    border-radius: 10px;
+    background-color:#98c1d9;
    
 }
 nav button:hover {
