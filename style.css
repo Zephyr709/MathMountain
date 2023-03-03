@@ -44,28 +44,28 @@ header {
 
 /* || Navbar Styles */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 10px;
-    
+    padding-top: 10px;  
 }
 nav ul {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     list-style: none;
-    margin: auto;
+    margin:auto;
     width: 100%;
+    padding:0;
+    padding-left: 10px;
+    padding-right: 10px;
+    
 
 }
 nav a {
     display:block;
     padding:10px;
     text-decoration: none;
+    font-weight: bold;
     border-radius: 10px;
     background-color:#98c1d9;
     color:#293241
+
     
 }
 nav li {
@@ -93,7 +93,8 @@ section {
     height: 90%;
     padding: 10px;
     margin: 10px;
-    border: 3px solid #ee6c4d
+    border: 3px solid #ee6c4d;
+    border-radius: 25px;
    
 }
 
