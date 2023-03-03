@@ -46,7 +46,7 @@ header {
 nav {
     padding-top: 10px;  
 }
-nav ul {
+#main-nav ul {
     display: flex;
     list-style: none;
     margin:auto;
@@ -57,7 +57,7 @@ nav ul {
     
 
 }
-nav a {
+#main-nav a {
     display:block;
     padding:10px;
     text-decoration: none;
@@ -68,7 +68,7 @@ nav a {
 
     
 }
-nav li {
+#main-nav li {
     flex:auto;
     text-align: center;
     height: 100%;
@@ -76,7 +76,7 @@ nav li {
    
    
 }
-nav a:hover {
+#main-nav a:hover {
     background-color: #3d5a80;
     color:white;
 }
