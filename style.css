@@ -50,16 +50,33 @@ nav {
     padding-top: 10px;
     
 }
-nav button {
-    flex:auto;
-    height: 100%;
-    padding: 10px;
-    margin:5px;
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    margin: auto;
+    width: 100%;
+
+}
+nav a {
+    display:block;
+    padding:10px;
+    text-decoration: none;
     border-radius: 10px;
     background-color:#98c1d9;
+    color:#293241
+    
+}
+nav li {
+    flex:auto;
+    text-align: center;
+    height: 100%;
+    margin:5px;
+   
    
 }
-nav button:hover {
+nav a:hover {
     background-color: #3d5a80;
     color:white;
 }
