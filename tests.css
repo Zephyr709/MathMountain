@@ -39,6 +39,7 @@ section h2 {
 #log {
     grid-area: log;
     border-radius: 25px 0 0 0;
+    overflow: auto;
 }
 #QNA {
     grid-area: QNA;
@@ -47,7 +48,9 @@ section h2 {
 #q-log {
     grid-area: q-log;
     border-radius: 0 25px 25px 0;
+    overflow: auto;
 }
+
 /* Secondary Nav Styles */
 
 #topics-nav {
