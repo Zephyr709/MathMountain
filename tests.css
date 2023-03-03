@@ -11,7 +11,16 @@ section h2 {
     height: 750px;
     border-radius: 25px;
     padding:10px;
-
+    display: grid;
+    grid-template-areas: 
+    "log log log log q-log"
+    "log log log log q-log"
+    "log log log log q-log"
+    "log log log log q-log"
+    "log log log log q-log"
+    "QNA QNA QNA QNA q-log"
+    ;
+    
 }
 
 #test-container {
@@ -23,6 +32,21 @@ section h2 {
     gap:20px;
 }
 
+#test-window div {
+    border: 1px solid black
+}
+#log {
+    grid-area: log;
+    border-radius: 25px 0 0 0;
+}
+#QNA {
+    grid-area: QNA;
+    border-radius: 0 0 0 25px;
+}
+#q-log {
+    grid-area: q-log;
+    border-radius: 0 25px 25px 0;
+}
 /* Secondary Nav Styles */
 
 #topics-nav {
