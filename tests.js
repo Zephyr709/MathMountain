@@ -1,5 +1,4 @@
 //Contstants
-
 const generateButton = document.getElementById('generateButton');
 
 //Variables
@@ -17,8 +16,10 @@ function getTestParameters() {
     minNum = document.getElementById('minNum').value;
 
     alert(`numQs is: ${numQs} and maxNum is: ${maxNum} and  minNum is: ${minNum}`);
-
-
 }
 
 //Event handlers
+generateButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    getTestParameters();
+});
