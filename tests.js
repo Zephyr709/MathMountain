@@ -1,8 +1,8 @@
 //Contstants
 const generateButton = document.getElementById('generateButton');
-const QNA = document.getElementById('QNA');
-const log = document.getElementById('log');
-const qlog = document.getElementById('qlog');
+const QNASection = document.getElementById('QNA');
+const logSection = document.getElementById('log');
+const qlogSection = document.getElementById('qlog');
 
 //Variables
 let numQs, maxNum, minNum = 0;
