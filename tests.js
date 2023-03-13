@@ -1,5 +1,8 @@
 //Contstants
 const generateButton = document.getElementById('generateButton');
+const QNA = document.getElementById('QNA');
+const log = document.getElementById('log');
+const qlog = document.getElementById('qlog');
 
 //Variables
 let numQs, maxNum, minNum = 0;
