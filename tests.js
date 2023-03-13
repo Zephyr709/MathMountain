@@ -15,7 +15,6 @@ function getTestParameters() {
     maxNum = document.getElementById('maxNum').value;
     minNum = document.getElementById('minNum').value;
 
-    alert(`numQs is: ${numQs} and maxNum is: ${maxNum} and  minNum is: ${minNum}`);
 }
 
 //Event handlers
