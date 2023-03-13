@@ -9,7 +9,7 @@ section h2 {
 #test-window {
     background-color: white;
     width: 90%;
-    height: 750px;
+    height: 50vh;
     border-radius: 25px;
     padding:10px;
     display: grid;
