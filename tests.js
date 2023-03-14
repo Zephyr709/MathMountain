@@ -6,6 +6,7 @@ const qlogSection = document.getElementById('qlog');
 
 //Variables
 let numQs, maxNum, minNum = 0;
+let testType = document.getElementById('test-type').innerHTML.toLowerCase();
 
 //Functions
 function randInt(min, max) {
@@ -20,10 +21,19 @@ function getTestParameters() {
 
 }
 
+function generateQuestion() {
+    alert(testType)
+    if (testType === 'addition') {
+        alert('test type is addition!')
+    }
+
+}
+
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
     getTestParameters();
+    generateQuestion();
     //1.Math: generate a question
     //2.QNA injection: replace inner html of QNA with question 
     //3.Log injection: on input event: send question, input answer, correct answer to an html element
