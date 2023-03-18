@@ -36,7 +36,7 @@
                     <label for="minNum">Smallest Number:</label>
                     <input id="minNum" name="smallestNum" value="0" type="number"/>
                     <label for="maxNum">Largest Number:</label>
-                    <input id="maxNum" name="largestNum" value="" type="number"/>
+                    <input id="maxNum" name="largestNum" value="10" type="number"/>
                     <button id="generateButton" type="button">Generate</button>
 
                 </div>
@@ -44,23 +44,23 @@
                     <nav id="topics-nav">
                         <h3>Topics</h3>
                         <ul>
-                            <li>Addition</li>
-                            <li>Subtraction</li>
-                            <li>Multiplication</li>
-                            <li>Division</li>
+                            <li onclick="setTestType('addition')">Addition</li>
+                            <li onclick="setTestType('subtraction')">Subtraction</li>
+                            <li onclick="setTestType('multiplication')">Multiplication</li>
+                            <li onclick="setTestType('division')">Division</li>
                         </ul>
                     </nav>
                     <div>
                         <h3 id="test-type">Addition</h3>
                         <div id="test-window">
                             <div id="log">
-
+                                <p>test 1</p>
                             </div>
                             <div id="qlog">
-
+                                <p>test 2</p>
                             </div>
                             <div id="QNA">
-                                
+                                <p>test 3</p>
                             </div>
                         </div>
                     </div>

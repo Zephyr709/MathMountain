@@ -6,7 +6,7 @@ const qlogSection = document.getElementById('qlog');
 
 //Variables
 let numQs, maxNum, minNum = 0;
-let testType = document.getElementById('test-type').innerHTML.toLowerCase();
+let testType = 'addition';
 
 //Functions
 function randInt(min, max) {
@@ -21,19 +21,39 @@ function getTestParameters() {
 
 }
 
-function generateQuestion() {
-    alert(testType)
-    if (testType === 'addition') {
-        alert('test type is addition!')
-    }
+function setTestType(type) {
+    testType = type;
+    alert(testType);
+}
 
+function generateQuestion() {
+    let numOne = randInt(minNum, maxNum);
+    let numTwo = randInt(minNum, maxNum);
+    let strQuestion = '';
+    
+    switch (testType) {
+        case 'addition':
+            strQuestion = `${numOne} + ${numTwo}`;
+            let answer = numOne + numTwo;
+            return [strQuestion, answer];
+
+        case 'subtraction':
+            break;
+
+        case 'multiplication':
+            break;
+
+        case 'division':
+            break;
+    }
 }
 
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
     getTestParameters();
-    generateQuestion();
+    let [strQuestion,answer] = generateQuestion();
+    
     //1.Math: generate a question
     //2.QNA injection: replace inner html of QNA with question 
     //3.Log injection: on input event: send question, input answer, correct answer to an html element
