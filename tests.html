@@ -44,14 +44,14 @@
                     <nav id="topics-nav">
                         <h3>Topics</h3>
                         <ul>
-                            <li onclick="setTestType('addition')">Addition</li>
-                            <li onclick="setTestType('subtraction')">Subtraction</li>
-                            <li onclick="setTestType('multiplication')">Multiplication</li>
-                            <li onclick="setTestType('division')">Division</li>
+                            <li onclick="setTestType('Addition')" class="clickable">Addition</li>
+                            <li onclick="setTestType('Subtraction')" class="clickable">Subtraction</li>
+                            <li onclick="setTestType('Multiplication')" class="clickable">Multiplication</li>
+                            <li onclick="setTestType('Division')" class="clickable">Division</li>
                         </ul>
                     </nav>
                     <div>
-                        <h3 id="test-type">Addition</h3>
+                        <h3 id="testHeader">Addition</h3>
                         <div id="test-window">
                             <div id="log">
                                 <p>test 1</p>
@@ -60,7 +60,9 @@
                                 <p>test 2</p>
                             </div>
                             <div id="QNA">
-                                <p>test 3</p>
+                                <p id="questionPrompt">test 3</p>
+                                <label for="enterAnswer">Enter an answer :</label>
+                                <input id="enterAnswer" name="enterAnswer" value=""/>
                             </div>
                         </div>
                     </div>
