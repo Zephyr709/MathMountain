@@ -42,21 +42,29 @@ function setQuestionPrompt(strQuestion, qNum, numQs) {
 function generateQuestion() {
     let numOne = randInt(minNum, maxNum);
     let numTwo = randInt(minNum, maxNum);
-
+    let strParam = '';
+    let numParam = 0;
     switch (testType) {
+        
         case 'Addition':
-            let strParam = `${numOne} + ${numTwo}`;
-            let numParam = numOne + numTwo;
+            strParam = `${numOne} + ${numTwo}`;
+            numParam = numOne + numTwo;
+            return {strParam, numParam};
+            
+        case 'Subtraction':
+            strParam = `${numOne} - ${numTwo}`;
+            numParam = numOne - numTwo;
             return {strParam, numParam};
 
-        case 'Subtraction':
-            break;
-
         case 'Multiplication':
-            break;
+            strParam = `${numOne} x ${numTwo}`;
+            numParam = numOne * numTwo;
+            return {strParam, numParam};
 
         case 'Division':
-            break;
+            strParam = `${numOne} / ${numTwo}`;
+            numParam = numOne / numTwo;
+            return {strParam, numParam};
     }
 }
 
