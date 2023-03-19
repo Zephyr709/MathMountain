@@ -44,6 +44,7 @@ function generateQuestion() {
     let numTwo = randInt(minNum, maxNum);
     let strParam = '';
     let numParam = 0;
+
     switch (testType) {
         
         case 'Addition':
@@ -62,6 +63,9 @@ function generateQuestion() {
             return {strParam, numParam};
 
         case 'Division':
+            while (numTwo === 0){
+                numTwo = randInt(minNum,maxNum);
+            }
             strParam = `${numOne} / ${numTwo}`;
             numParam = numOne / numTwo;
             return {strParam, numParam};
@@ -113,10 +117,18 @@ function updateLog () {
 
 }
 
+function resetTest() {
+    logSection.innerHTML = '';
+    qlogSection.innerHTML = '';
+    questionPrompt.innerHTML = '';
+    qCounter = 1;
+}
+
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
     getTestParameters();
+    resetTest();
     let {strParam,numParam} = generateQuestion();
     strQuestion = strParam;
     answer = numParam;
