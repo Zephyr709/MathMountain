@@ -113,20 +113,24 @@ generateButton.addEventListener('click', (event) => {
     strQuestion = strParam;
     answer = numParam;
     setQuestionPrompt(strQuestion, qCounter, numQs);
+   
 });
 
 enterAnswer.addEventListener('keyup', (event) => {
-    if (qCounter < numQs) {
-        if (event.keyCode === 13) {
-            userAnswer = Number(enterAnswer.value);
-            enterAnswer.value = '';
-            updateLog();
+// HELP: Logical error within this block of code; need to figure out a way to stop taking answers when qCounter= numQs
+    if (event.keyCode === 13) {
+        userAnswer = Number(enterAnswer.value);
+        enterAnswer.value = '';
+        updateLog();
+        
+        if (qCounter < numQs){
             qCounter++;
             let {strParam,numParam} = generateQuestion();
             strQuestion = strParam;
             answer = numParam;
             setQuestionPrompt(strQuestion, qCounter, numQs);
         }
+    }
 
 
-}});
+});
