@@ -10,7 +10,7 @@ section h2 {
     background-color: white;
     max-width: 90%;
     width: 60vw;
-    height: 50vh;
+    height: 60vh;
     border-radius: 25px;
     padding:10px;
     display: grid;
@@ -68,7 +68,9 @@ section h2 {
 
 #QNA p, label, input {
     border: 1px solid black;
+    margin-top:-5px;
 }
+
     
 
 #test-options {
@@ -76,6 +78,7 @@ section h2 {
     padding:10px;
     margin: 10px;
 }
+
 /* Secondary Nav Styles */
 
 #topics-nav {

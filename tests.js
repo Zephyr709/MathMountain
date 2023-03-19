@@ -9,9 +9,11 @@ const enterAnswer = document.getElementById('enterAnswer');
 
 //Variables
 let numQs, maxNum, minNum = 0;
-let testType = 'addition';
+let testType = 'Addition';
 let userAnswer = 0;
 let qCounter = 1;
+let strQuestion = '';
+let answer = 0;
 
 //Functions
 function randInt(min, max) {
@@ -43,9 +45,9 @@ function generateQuestion() {
 
     switch (testType) {
         case 'Addition':
-            let strQuestion = `${numOne} + ${numTwo}`;
-            let answer = numOne + numTwo;
-            return {strQuestion, answer};
+            let strParam = `${numOne} + ${numTwo}`;
+            let numParam = numOne + numTwo;
+            return {strParam, numParam};
 
         case 'Subtraction':
             break;
@@ -58,31 +60,73 @@ function generateQuestion() {
     }
 }
 
+function updateLog () {
+    if (qCounter === 1) {
+        logSection.innerHTML = `
+        <p>
+            Question ${qCounter}/${numQs}: ${strQuestion} <br>
+            Your Answer: ${userAnswer} <br>
+            Correct Answer: ${answer} 
+        </p>`;
+        if (userAnswer === answer) {    
+            qlogSection.innerHTML = `
+            <p>
+                #${qCounter}: :)
+            </p>
+            `;
+        } else {
+            qlogSection.innerHTML = `
+            <p>
+                #${qCounter}: :(
+            </p>
+            `;
+        }
+    } else {
+        logSection.innerHTML += `
+        <p>
+            Question ${qCounter}/${numQs}: ${strQuestion} <br>
+            Your Answer: ${userAnswer} <br>
+            Correct Answer: ${answer} 
+        </p>`;
+        if (userAnswer === answer) {    
+            qlogSection.innerHTML += `
+            <p>
+                #${qCounter}: :)
+            </p>
+            `;
+        } else {
+            qlogSection.innerHTML += `
+            <p>
+                #${qCounter}: :(
+            </p>
+            `;
+        }
+    }
+
+}
+
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
     getTestParameters();
-
-    for (let i = 1; i <= numQs; i++ ) {
-        let {strQuestion,answer} = generateQuestion();
-        setQuestionPrompt(strQuestion, i, numQs);
-    }
-    
-
-    //1.Math: generate a question
-    //2.QNA injection: replace inner html of QNA with question 
-    //3.Log injection: on input event: send question, input answer, correct answer to an html element
-    //  then append the generated element to log section
-    //4.qlog injection: compare input answer vs correct answer send to an html element 
-    //  then append to qlog
-    //5.Math:genereate a question 
-    //6. QNA Injection replace inner html of QNA with new question
+    let {strParam,numParam} = generateQuestion();
+    strQuestion = strParam;
+    answer = numParam;
+    setQuestionPrompt(strQuestion, qCounter, numQs);
 });
 
 enterAnswer.addEventListener('keyup', (event) => {
-    if (event.keyCode === 13) {
-        userAnswer = Number(enterAnswer.value);
-    }
+    if (qCounter < numQs) {
+        if (event.keyCode === 13) {
+            userAnswer = Number(enterAnswer.value);
+            enterAnswer.value = '';
+            updateLog();
+            qCounter++;
+            let {strParam,numParam} = generateQuestion();
+            strQuestion = strParam;
+            answer = numParam;
+            setQuestionPrompt(strQuestion, qCounter, numQs);
+        }
 
 
-})
+}});
