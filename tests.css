@@ -22,6 +22,7 @@ section h2 {
     "log log log log q-log"
     "QNA QNA QNA QNA q-log"
     ;
+    /* Below is a fix for grid template stretching with content */
     grid-template-columns: 20% 20% 20% 20% 20%;
     grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
 }
@@ -73,21 +74,26 @@ section h2 {
 #test-options {
     border: 1px solid black;
     padding:10px;
+    margin: 10px;
 }
 /* Secondary Nav Styles */
 
 #topics-nav {
     border-right: 3px solid;
     padding:10px;
+    margin-top:-10px;
     
     
 }
 
-#topics-nav ul {
+#topics-nav ul, li {
     list-style: none;
     padding:0;
-}
-
-li {
     color:white;
 }
+
+#topics-nav li:hover {
+    cursor:pointer;
+    font-weight: bold;
+}
+
