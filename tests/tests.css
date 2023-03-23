@@ -20,21 +20,19 @@ section h2 {
     "log log log log "
     "log log log log "
     "log log log log "
-    "QNA QNA QNA QNA "
+    "QNA QNA QNA QNA"
     ;
     /* Below is a fix for grid template stretching with content */
-    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
 }
 
 #test-container {
-    display: grid;
-    grid-template-areas: 
-    "sidebar test"
-    ;
-    grid-template-columns: 1fr 5fr;
-    gap:20px;
+    margin:auto;
     
+}
+#test-window {
+    margin: auto;
 }
 
 #test-window div,p {
@@ -43,7 +41,9 @@ section h2 {
     color:black;
 }
 
-
+#testHeader {
+    text-align: center;
+}
 
 #log {
     grid-area: log;
