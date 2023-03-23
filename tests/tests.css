@@ -15,12 +15,12 @@ section h2 {
     padding:10px;
     display: grid;
     grid-template-areas: 
-    "log log log log q-log"
-    "log log log log q-log"
-    "log log log log q-log"
-    "log log log log q-log"
-    "log log log log q-log"
-    "QNA QNA QNA QNA q-log"
+    "log log log log "
+    "log log log log "
+    "log log log log "
+    "log log log log "
+    "log log log log "
+    "QNA QNA QNA QNA "
     ;
     /* Below is a fix for grid template stretching with content */
     grid-template-columns: 20% 20% 20% 20% 20%;
@@ -56,11 +56,7 @@ section h2 {
     overflow:auto;
     
 }
-#qlog {
-    grid-area: q-log;
-    border-radius: 0 25px 25px 0;
-    overflow: auto;
-}
+
 
 #test-options input {
     width:50px;
