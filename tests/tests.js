@@ -140,12 +140,15 @@ enterAnswer.addEventListener('keyup', (event) => {
 // HELP: Logical error within this block of code; need to figure out a way to stop taking answers when qCounter= numQs
     if (event.keyCode === 13) {
         
-        if (qCounter < numQs){
+        if (qCounter <= numQs){
             userAnswer = Number(enterAnswer.value);
             enterAnswer.value = '';
             updateLog();
-            // if q counter is = to num qs return
             qCounter++;
+            if (qCounter > numQs){
+                return;
+            }
+           
             let {strParam,numParam} = generateQuestion();
             strQuestion = strParam;
             answer = numParam;
