@@ -80,19 +80,7 @@ function updateLog () {
             Your Answer: ${userAnswer} <br>
             Correct Answer: ${answer} 
         </p>`;
-        if (userAnswer === answer) {    
-            qlogSection.innerHTML = `
-            <p>
-                #${qCounter}: :)
-            </p>
-            `;
-        } else {
-            qlogSection.innerHTML = `
-            <p>
-                #${qCounter}: :(
-            </p>
-            `;
-        }
+        
     } else {
         logSection.innerHTML += `
         <p>
@@ -100,19 +88,7 @@ function updateLog () {
             Your Answer: ${userAnswer} <br>
             Correct Answer: ${answer} 
         </p>`;
-        if (userAnswer === answer) {    
-            qlogSection.innerHTML += `
-            <p>
-                #${qCounter}: :)
-            </p>
-            `;
-        } else {
-            qlogSection.innerHTML += `
-            <p>
-                #${qCounter}: :(
-            </p>
-            `;
-        }
+        
     }
 
 }
