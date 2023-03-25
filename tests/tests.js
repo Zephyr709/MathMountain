@@ -2,10 +2,10 @@
 const generateButton = document.getElementById('generateButton');
 const QNASection = document.getElementById('QNA');
 const logSection = document.getElementById('log');
-const qlogSection = document.getElementById('qlog');
 const questionPrompt = document.getElementById('questionPrompt');
 const testHeader = document.getElementById('testHeader');
 const enterAnswer = document.getElementById('enterAnswer');
+const errorPrompt = document.getElementById('errorPrompt');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -95,7 +95,6 @@ function updateLog () {
 
 function resetTest() {
     logSection.innerHTML = '';
-    qlogSection.innerHTML = '';
     questionPrompt.innerHTML = '';
     qCounter = 1;
 }
@@ -103,6 +102,7 @@ function resetTest() {
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
+    document.getElementById("test-container").style.display = 'block';
     getTestParameters();
     resetTest();
     let {strParam,numParam} = generateQuestion();
@@ -114,7 +114,18 @@ generateButton.addEventListener('click', (event) => {
 
 enterAnswer.addEventListener('keyup', (event) => {
 // HELP: Logical error within this block of code; need to figure out a way to stop taking answers when qCounter= numQs
-    if (event.keyCode === 13) {
+    if (event.key === "Enter") { 
+        errorPrompt.innerHTML = '';
+        if (qCounter > 1){
+            logSection.lastChild.scrollIntoView(false);
+        }
+        
+
+        if (enterAnswer.value === ''){
+            errorPrompt.innerHTML = `
+            You have tried to submit an empty answer, Please enter a number.`
+            return;
+        }
         
         if (qCounter <= numQs){
             userAnswer = Number(enterAnswer.value);
@@ -122,6 +133,7 @@ enterAnswer.addEventListener('keyup', (event) => {
             updateLog();
             qCounter++;
             if (qCounter > numQs){
+                questionPrompt.innerHTML = ``;
                 return;
             }
            

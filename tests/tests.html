@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width"/>
         <meta author="Jager Cooper" content="MathMountain" />
         <link rel="stylesheet" href="../style.css"/>
-        <link rel="stylesheet" href="../tests/tests.css"/>
-        <script src="../tests/tests.js" defer></script>
+        <link rel="stylesheet" href="tests.css"/>
+        <script src="tests.js" defer></script>
 
         <title>MathMountain</title>
     </head>
@@ -21,7 +21,7 @@
         <main>
             <nav id="main-nav">
                 <ul>
-                    <li><a id="home" href="index.html">Home</a></li>
+                    <li><a id="home" href="../index.html">Home</a></li>
                     <li><a id="test-your-skills" href=#>Test Your Skills</a></li>
                     <li><a id="practice-sheets" href=#>Practice Sheets</a></li>
                     <li><a id="contact-us" href=#>Contact Us</a></li>
@@ -32,7 +32,7 @@
                 <h2>Test Your Skills</h2>
                 <div id="test-options">
                     <label for="numQuestions"> Number of Questions:</label>
-                    <input id="numQuestions" name="numQuestions" value="25" type="number"/>
+                    <input id="numQuestions" name="numQuestions" value="25" type="number" min="1" max="100"/>
                     <label for="minNum">Lowest Number:</label>
                     <input id="minNum" name="smallestNum" value="0" type="number"/>
                     <label for="maxNum">Highest Number:</label>
@@ -50,7 +50,8 @@
                         <div id="QNA">
                             <p id="questionPrompt"></p>
                             <label for="enterAnswer">Enter an answer :</label>
-                            <input id="enterAnswer" name="enterAnswer" value=""/>
+                            <input id="enterAnswer" name="enterAnswer" value="0" type="number" min="0"/>
+                            <p id="errorPrompt"></p>
                         </div>
                     </div>
                     
