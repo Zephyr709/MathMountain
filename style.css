@@ -83,14 +83,13 @@ nav {
 
 /* || Main Content Styles */
 main {
-    height: 100vh;
+    min-height: 100vh;
     width: 75%;
     margin: auto;
     
 
 }
 section {
-    height: 90%;
     padding: 10px;
     margin: 10px;
     border: 3px solid #ee6c4d;
@@ -111,7 +110,6 @@ p {
 footer {
     height: 50px;
     text-align: center;
-    position:fixed;
     left: 0;
     bottom:0;
     width:100%;

@@ -22,17 +22,17 @@ input[type=number] {
     
     max-width: 90%;
     width: 60vw;
-    height: 60vh;
+    min-height: 70vh;
     border-radius: 25px;
     padding:10px;
     display: grid;
-    grid-template-areas: 
-    "log log log log "
-    "log log log log "
-    "log log log log "
-    "log log log log "
-    "log log log log "
+    grid-template-areas:
     "QNA QNA QNA QNA"
+    "log log log log "
+    "log log log log "
+    "log log log log "
+    "log log log log "
+    "log log log log "
     ;
     /* Below is a fix for grid template stretching with content */
     grid-template-columns: 25% 25% 25% 25%;
@@ -52,6 +52,7 @@ input[type=number] {
     border: 3px solid #ee6c4d;
     padding:10px;
     color:white;
+    text-align: center;
 }
 
 #testHeader {
@@ -60,16 +61,26 @@ input[type=number] {
 
 #log {
     grid-area: log;
-    border-radius: 25px 25px 0 0;
+    border-radius: 0px 0px 25px 25px;
     overflow: auto;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap:10px;
+    padding: 10px;
+    
+    
 }
 #log p {
     border-radius: 15px;
+    flex-grow: 1;
 }
 #QNA {
     grid-area: QNA;
-    border-radius: 0 0 25px 25px;
+    border-radius: 25px 25px 0 0;
     overflow:hidden;
+    
     
 }
 
@@ -79,7 +90,6 @@ input[type=number] {
 }
 
 #QNA p, label, input {
-    
     border:none;
     padding:5px;
 }

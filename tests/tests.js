@@ -74,21 +74,37 @@ function generateQuestion() {
 
 function updateLog () {
     if (qCounter === 1) {
+        if (userAnswer === answer) {
         logSection.innerHTML = `
         <p>
             Question ${qCounter}/${numQs}: ${strQuestion} <br>
-            Your Answer: ${userAnswer} <br>
+            <span style="color:LightGreen;">Your Answer: ${userAnswer}</span> <br>
             Correct Answer: ${answer} 
         </p>`;
-        
-    } else {
-        logSection.innerHTML += `
+        } else {
+            logSection.innerHTML = `
         <p>
             Question ${qCounter}/${numQs}: ${strQuestion} <br>
-            Your Answer: ${userAnswer} <br>
+            <span style="color:IndianRed;">Your Answer: ${userAnswer}</span> <br>
             Correct Answer: ${answer} 
         </p>`;
-        
+        }
+    } else {
+        if (userAnswer === answer) {
+            logSection.innerHTML = `
+            <p>
+                Question ${qCounter}/${numQs}: ${strQuestion} <br>
+                <span style="color:LightGreen;">Your Answer: ${userAnswer}</span> <br>
+                Correct Answer: ${answer} 
+            </p>` + logSection.innerHTML;
+            } else {
+                logSection.innerHTML = `
+            <p>
+                Question ${qCounter}/${numQs}: ${strQuestion} <br>
+                <span style="color:IndianRed;">Your Answer: ${userAnswer}</span> <br>
+                Correct Answer: ${answer} 
+            </p>` + logSection.innerHTML;
+            }
     }
 
 }
@@ -116,10 +132,6 @@ enterAnswer.addEventListener('keyup', (event) => {
 // HELP: Logical error within this block of code; need to figure out a way to stop taking answers when qCounter= numQs
     if (event.key === "Enter") { 
         errorPrompt.innerHTML = '';
-        if (qCounter > 1){
-            logSection.lastChild.scrollIntoView(false);
-        }
-        
 
         if (enterAnswer.value === ''){
             errorPrompt.innerHTML = `
