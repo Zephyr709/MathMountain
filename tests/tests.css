@@ -25,18 +25,9 @@ input[type=number] {
     min-height: 70vh;
     border-radius: 25px;
     padding:10px;
-    display: grid;
-    grid-template-areas:
-    "QNA QNA QNA QNA"
-    "log log log log "
-    "log log log log "
-    "log log log log "
-    "log log log log "
-    "log log log log "
-    ;
-    /* Below is a fix for grid template stretching with content */
-    grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 20% 15.6% 15.6% 15.6% 15.6% 15.6%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
 }
 
 #test-container {
@@ -69,7 +60,7 @@ input[type=number] {
     justify-content: flex-start;
     gap:10px;
     padding: 10px;
-    
+    min-height:200px;
     
 }
 #log p {
@@ -80,6 +71,7 @@ input[type=number] {
     grid-area: QNA;
     border-radius: 25px 25px 0 0;
     overflow:hidden;
+    height:160px;
     
     
 }
