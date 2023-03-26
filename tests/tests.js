@@ -110,7 +110,9 @@ function updateLog () {
 }
 
 function resetTest() {
-    logSection.innerHTML = '';
+    logSection.innerHTML = `
+    <p> Your Question results will appear here.</p>
+    `;
     questionPrompt.innerHTML = '';
     qCounter = 1;
 }
