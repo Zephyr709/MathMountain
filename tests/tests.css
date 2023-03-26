@@ -1,5 +1,5 @@
 /* Style sheet specific to the test your skills section*/
-/* Section Styles */
+/* || Section Styles */
 
 section h2 {
     text-align: center;
@@ -17,9 +17,9 @@ input[type=number] {
   /* Firefox */
 }
 
-/* Test Styles */
+/* || Test Styles */
 #test-window {
-    
+    margin: auto;
     max-width: 90%;
     width: 60vw;
     min-height: 70vh;
@@ -30,15 +30,6 @@ input[type=number] {
     justify-content: flex-end;
 }
 
-#test-container {
-    margin:auto;
-    display:none;
-    
-}
-#test-window {
-    margin: auto;
-}
-
 #test-window div,p {
     border: 3px solid #ee6c4d;
     padding:10px;
@@ -46,10 +37,18 @@ input[type=number] {
     text-align: center;
 }
 
+#test-container {
+    margin:auto;
+    display:none;
+    
+}
+
 #testHeader {
     text-align: center;
 }
 
+
+/* || Tests Log styles */
 #log {
     grid-area: log;
     border-radius: 0px 0px 25px 25px;
@@ -67,6 +66,8 @@ input[type=number] {
     border-radius: 15px;
     flex-grow: 1;
 }
+
+/* || Tests QNA styles */
 #QNA {
     grid-area: QNA;
     border-radius: 25px 25px 0 0;
@@ -76,21 +77,53 @@ input[type=number] {
     
 }
 
-
-#test-options input {
-    width:50px;
-}
-
 #QNA p, label, input {
     border:none;
     padding:5px;
 }
 
-    
+/* || Tests Options styles */
 
 #test-options {
-    border: 1px solid black;
     padding:10px;
     margin: 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap:20px;
 }
 
+#test-options input {
+    width:40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#test-options select {
+    padding: 3px;
+    border-radius: 10px;
+    
+}
+.options {
+    flex-grow: 1;
+    border: 1px solid;
+    border-radius: 10px;
+    padding:10px;
+    text-align: center;
+    margin:auto;
+    height:50px;
+}
+
+#generateButton {
+    height:100%;
+    width:100%;
+    border-radius: 10px;
+    border-color: transparent;
+    color: #ee6c4d;
+    background-color: transparent;
+    font-size: inherit;
+}
+
+#generateButton:hover {
+    cursor:pointer;
+}
