@@ -36,7 +36,7 @@ input[type=number] {
     ;
     /* Below is a fix for grid template stretching with content */
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 16.6% 16.6% 16.6% 16.6% 16.6% 16.6%;
+    grid-template-rows: 20% 15.6% 15.6% 15.6% 15.6% 15.6%;
 }
 
 #test-container {
