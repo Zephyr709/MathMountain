@@ -26,6 +26,7 @@ const getTestParameters = () => {
     maxNum = document.getElementById('maxNum').value;
     minNum = document.getElementById('minNum').value;
     testType = document.getElementById('testType').value;
+    setTestType(testType);
 
 }
 
