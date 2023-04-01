@@ -84,7 +84,11 @@ input[type=number] {
     border:none;
     padding:5px;
 }
-
+#enterAnswer {
+    width:75px;
+    border-radius: 10px;
+    text-align: center;
+}
 /* || Tests Options styles */
 
 #test-options {
