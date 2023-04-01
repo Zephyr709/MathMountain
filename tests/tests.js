@@ -16,12 +16,12 @@ let strQuestion = '';
 let answer = 0;
 
 //Functions
-function randInt(min, max) {
+const randInt = (min, max) => {
     // A proper random integer function; min/max inclusive. credit: W3Schools.com
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function getTestParameters() {
+const getTestParameters = () => {
     numQs = document.getElementById('numQuestions').value;
     maxNum = document.getElementById('maxNum').value;
     minNum = document.getElementById('minNum').value;
@@ -29,18 +29,18 @@ function getTestParameters() {
 
 }
 
-function setTestType(type) {
+const setTestType = (type) => {
     testType = type;
     testHeader.innerHTML = testType;
 }
 
-function setQuestionPrompt(strQuestion, qNum, numQs) {
+const setQuestionPrompt = (strQuestion, qNum, numQs) => {
     questionPrompt.innerHTML = `
         Question #${qNum}/${numQs}: ${strQuestion}
     `;
 }
 
-function generateQuestion() {
+const generateQuestion = () => {
     let numOne = randInt(minNum, maxNum);
     let numTwo = randInt(minNum, maxNum);
     let strParam = '';
@@ -73,7 +73,7 @@ function generateQuestion() {
     }
 }
 
-function updateLog () {
+const updateLog = () => {
     if (qCounter === 1) {
         if (userAnswer === answer) {
         logSection.innerHTML = `
@@ -110,7 +110,7 @@ function updateLog () {
 
 }
 
-function resetTest() {
+const resetTest = () => {
     logSection.innerHTML = `
     <p> Your Question results will appear here.</p>
     `;
