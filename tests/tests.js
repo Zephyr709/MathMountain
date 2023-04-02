@@ -176,13 +176,30 @@ const resetTest = () => {
     `;
     questionPrompt.innerHTML = '';
     qCounter = 1;
+    correctQs = 0;
+    activeTest.style.display = 'block';
+    completeTest.style.display = 'none';
 }
 
 const generateTestResults = () => {
-    percentScore = parseFloat((correctQs/numQs).toFixed(1));
-
+    percentScore = parseFloat(((correctQs/numQs) * 100).toFixed(1));
+    activeTest.style.display = 'none';
+    completeTest.style.display = 'flex';
+    if (percentScore >= 90) {
+        color = 'LightGreen';
+    } else if (percentScore >= 80) {
+        color = 'GreenYellow';
+    } else if (percentScore >= 70) {
+        color = 'gold';
+    } else if (percentScore >= 60) {
+        color = 'OrangeRed';
+    } else if (percentScore >= 50) {
+        color = 'IndianRed';
+    } else {
+        color = 'Red';
+    }
     testResults.innerHTML = `
-    You Scored: %${percentScore} <br>
+    You Scored: % <span style="color:${color}">${percentScore}</span> <br>
     Correct Questions: ${correctQs}/${numQs} <br>
     Time to Complete: ${calcTime()} <br>
     `
@@ -191,9 +208,14 @@ const generateTestResults = () => {
 
 const calcTime = () => {
     elapsed = Math.floor((time2 - time1)/1000);
-    minutes = elapsed / 60;
+    minutes = Math.floor(elapsed / 60);
     seconds = elapsed % 60;
-    return `${minutes} minutes ${seconds} seconds`
+    if (minutes > 0) {
+        return `${minutes} Minutes ${seconds} Seconds`
+    } else {
+        return `${seconds} Seconds`
+    }
+    
 }
 
 //Event handlers
