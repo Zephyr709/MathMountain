@@ -20,6 +20,54 @@ input[type=number] {
   /* Firefox */
 }
 
+button:hover {
+    cursor:pointer;
+    background-color: #3d5a80;
+    color:white;
+    font-weight: bold;
+}
+
+/* || Classes */
+.options {
+    flex-grow: 1;
+    border: 1px solid;
+    border-radius: 10px;
+    padding:10px;
+    text-align: center;
+    margin:auto;
+    height:50px;
+}
+.flexgrow {
+    flex-grow: 1;
+    text-align: center;
+    margin:auto;
+}
+
+.borderless {
+    border:none !important;
+}
+
+.button {
+    height:100%;
+    width:100%;
+    border-radius: 10px;
+    border-color: transparent;
+    color: #ee6c4d;
+    background-color: transparent;
+    font-size: inherit;
+    background-color:#98c1d9;
+    color:#293241;
+    font-weight: bold;
+    
+}
+
+.flexCol {
+    display:flex;
+    flex-flow: column;
+    justify-content: space-between;
+    
+    
+}
 /* || Test Styles */
 #test-window {
     margin: auto;
@@ -42,7 +90,7 @@ input[type=number] {
 
 #test-container {
     margin:auto;
-    display:none;
+    display:block;
     
 }
 
@@ -96,8 +144,23 @@ input[type=number] {
 }
 
 #activeTest {
-    border: none !important;
     margin-top: -10px;
+    display:none;
+}
+
+#completeTest {
+    margin-top: -10px;
+    display:flex;
+    flex-flow:row;
+    justify-content: space-around;
+}
+#testResults {
+    text-align: left;
+    line-height: 2;
+}
+#newTest, #restartTest {
+    width:150px;
+    height:40px
 }
 
 /* || Tests Options styles */
@@ -122,26 +185,4 @@ input[type=number] {
     border-radius: 10px;
     
 }
-.options {
-    flex-grow: 1;
-    border: 1px solid;
-    border-radius: 10px;
-    padding:10px;
-    text-align: center;
-    margin:auto;
-    height:50px;
-}
 
-#generateButton {
-    height:100%;
-    width:100%;
-    border-radius: 10px;
-    border-color: transparent;
-    color: #ee6c4d;
-    background-color: transparent;
-    font-size: inherit;
-}
-
-#generateButton:hover {
-    cursor:pointer;
-}

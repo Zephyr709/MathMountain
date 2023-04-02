@@ -77,7 +77,7 @@
                         </select>
                     </div>
                     <div class="options">
-                        <button id="generateButton" type="button">Generate</button>
+                        <button class="button" id="generateButton" type="button">Generate</button>
                     </div>
                 </div>
                 <div id="test-container">
@@ -88,12 +88,31 @@
                         </div>
                         
                         <div id="QNA">
-                            <div id="activeTest">
+                            <div id="activeTest" class="borderless">
                                 <p id="questionPrompt"></p>
                                 <label for="enterAnswer">Enter an answer :</label>
                                 <input id="enterAnswer" name="enterAnswer" value="" type="number" min="0"/>
                                 <button id="submitButton" type="button">Submit</button>
                                 <p id="errorPrompt"></p>
+                            </div>
+                            <div id="completeTest" class="borderless">
+                                <div class="flexgrow borderless">
+                                    <p id="testResults">
+                                    You Scored: <br>
+                                    Correct Questions: <br>
+                                    Time to Complete: <br>
+                                    </p>
+                                </div>
+                                <div class="flexgrow flexCol borderless">
+                                    <div class="flexgrow borderless">
+                                        <button class="button" id="newTest" type="button">New Test</button>
+                                    </div>
+                                    <div class="flexgrow borderless">
+                                        <button class="button " id="restartTest" type="button">Restart Test</button>
+                                    </div>
+                                </div>
+                                
+
                             </div>
                         </div>
                     </div>
