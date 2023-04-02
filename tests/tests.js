@@ -7,6 +7,8 @@ const testHeader = document.getElementById('testHeader');
 const enterAnswer = document.getElementById('enterAnswer');
 const errorPrompt = document.getElementById('errorPrompt');
 const submitButton = document.getElementById('submitButton');
+const repeatQuestion = document.getElementById('repeatQuestion')
+const negAnswers = document.getElementById('negAnswers')
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -15,6 +17,8 @@ let userAnswer = 0;
 let qCounter = 1;
 let strQuestion = '';
 let answer = 0;
+let negA = false;
+let repQ = true;
 
 //Functions
 const randInt = (min, max) => {
@@ -28,6 +32,17 @@ const getTestParameters = () => {
     minNum = document.getElementById('minNum').value;
     testType = document.getElementById('testType').value;
     setTestType(testType);
+    if (repeatQuestion.value === 'Yes') {
+        repQ = true;
+    } else {
+        repQ = false;
+    }
+
+    if (negAnswers.value === 'Yes') {
+        negA = true;
+    } else {
+        negA = false;
+    }
 
 }
 
@@ -68,11 +83,35 @@ const generateQuestion = () => {
         case 'Division':
             while (numTwo === 0){
                 numTwo = randInt(minNum,maxNum);
+                
             }
+
+            [numOne, numTwo] = simpleDivisor(numOne, numTwo); 
+
             strParam = `${numOne} / ${numTwo}`;
             numParam = numOne / numTwo;
             return {strParam, numParam};
     }
+}
+
+const simpleDivisor = (numOne, numTwo) => {
+    let a = numOne/numTwo;
+    let b = Math.floor(a);
+    let c = (a-b).toString();
+    
+    while (c.length > 5) {
+        numOne = randInt(minNum, maxNum);
+        numTwo = randInt(minNum, maxNum);
+        if (numTwo === 0){
+            continue;
+        }
+        a = numOne/numTwo;
+        b = Math.floor(a);
+        c = (a-b).toString();
+
+    }
+
+    return [numOne,numTwo];
 }
 
 const updateLog = () => {
