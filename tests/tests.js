@@ -7,8 +7,8 @@ const testHeader = document.getElementById('testHeader');
 const enterAnswer = document.getElementById('enterAnswer');
 const errorPrompt = document.getElementById('errorPrompt');
 const submitButton = document.getElementById('submitButton');
-const repeatQuestion = document.getElementById('repeatQuestion')
-const negAnswers = document.getElementById('negAnswers')
+const repeatQuestion = document.getElementById('repeatQuestion');
+const negAnswers = document.getElementById('negAnswers');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -19,6 +19,7 @@ let strQuestion = '';
 let answer = 0;
 let negA = false;
 let repQ = true;
+let decLen = 0;
 
 //Functions
 const randInt = (min, max) => {
@@ -32,6 +33,7 @@ const getTestParameters = () => {
     minNum = document.getElementById('minNum').value;
     testType = document.getElementById('testType').value;
     setTestType(testType);
+    decLen = document.getElementById('decimalLength').value;
     if (repeatQuestion.value === 'Yes') {
         repQ = true;
     } else {
@@ -98,8 +100,12 @@ const simpleDivisor = (numOne, numTwo) => {
     let a = numOne/numTwo;
     let b = Math.floor(a);
     let c = (a-b).toString();
+    //Check to allow repeating decimals eg. 0.3333, 0.8222 etc.
+    if ( (c[3]===c[4] && c[3]===c[5] && c[3]===c[6]) || (c[4]===c[5] && c[4]===c[6] && c[4]===c[7]) ) {
+        c = c.slice(0,decLen+2);
+    }
     
-    while (c.length > 5) {
+    while (c.length > decLen+2) {
         numOne = randInt(minNum, maxNum);
         numTwo = randInt(minNum, maxNum);
         if (numTwo === 0){
