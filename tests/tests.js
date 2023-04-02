@@ -9,6 +9,7 @@ const errorPrompt = document.getElementById('errorPrompt');
 const submitButton = document.getElementById('submitButton');
 const repeatQuestion = document.getElementById('repeatQuestion');
 const negAnswers = document.getElementById('negAnswers');
+const decPlaces = document.getElementById('decPlaces');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -100,11 +101,12 @@ const simpleDivisor = (numOne, numTwo) => {
     let a = numOne/numTwo;
     let b = Math.floor(a);
     let c = (a-b).toString();
-    //Check to allow repeating decimals eg. 0.3333, 0.8222 etc.
-    if ( (c[3]===c[4] && c[3]===c[5] && c[3]===c[6]) || (c[4]===c[5] && c[4]===c[6] && c[4]===c[7]) ) {
-        c = c.slice(0,decLen+2);
+    //Check to allow repeating decimals if length of number is greater than 3 eg. 2.3333, 0.8222 etc.
+    if (decLen+2 > 3){
+        if ( (c[3]===c[4] && c[3]===c[5] && c[3]===c[6]) || (c[4]===c[5] && c[4]===c[6] && c[4]===c[7]) ) {
+            c = c.slice(0,decLen+2);
+        }
     }
-    
     while (c.length > decLen+2) {
         numOne = randInt(minNum, maxNum);
         numTwo = randInt(minNum, maxNum);

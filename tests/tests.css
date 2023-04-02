@@ -75,8 +75,7 @@ input[type=number] {
     grid-area: QNA;
     border-radius: 25px 25px 0 0;
     overflow:hidden;
-    height:160px;
-    
+    height:175px;
     
 }
 
@@ -94,6 +93,11 @@ input[type=number] {
     padding:5px;
     border-radius: 10px;
     border-color: rgba(0,0,0,0);
+}
+
+#activeTest {
+    border: none !important;
+    margin-top: -10px;
 }
 
 /* || Tests Options styles */
