@@ -6,6 +6,7 @@ const questionPrompt = document.getElementById('questionPrompt');
 const testHeader = document.getElementById('testHeader');
 const enterAnswer = document.getElementById('enterAnswer');
 const errorPrompt = document.getElementById('errorPrompt');
+const submitButton = document.getElementById('submitButton');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -133,7 +134,6 @@ generateButton.addEventListener('click', (event) => {
 });
 
 enterAnswer.addEventListener('keyup', (event) => {
-// HELP: Logical error within this block of code; need to figure out a way to stop taking answers when qCounter= numQs
     if (event.key === "Enter") { 
         errorPrompt.innerHTML = '';
 
@@ -160,5 +160,32 @@ enterAnswer.addEventListener('keyup', (event) => {
         }
     }
 
+
+});
+
+submitButton.addEventListener('click', (event) => {
+    errorPrompt.innerHTML = '';
+
+        if (enterAnswer.value === ''){
+            errorPrompt.innerHTML = `
+            You have tried to submit an empty answer, Please enter a number.`
+            return;
+        }
+        
+        if (qCounter <= numQs){
+            userAnswer = Number(enterAnswer.value);
+            enterAnswer.value = '';
+            updateLog();
+            qCounter++;
+            if (qCounter > numQs){
+                questionPrompt.innerHTML = ``;
+                return;
+            }
+           
+            let {strParam,numParam} = generateQuestion();
+            strQuestion = strParam;
+            answer = numParam;
+            setQuestionPrompt(strQuestion, qCounter, numQs);
+        }
 
 });
