@@ -37,12 +37,12 @@ const randInt = (min, max) => {
 }
 
 const getTestParameters = () => {
-    numQs = document.getElementById('numQuestions').value;
-    maxNum = document.getElementById('maxNum').value;
-    minNum = document.getElementById('minNum').value;
+    numQs = Number(document.getElementById('numQuestions').value);
+    maxNum = Number(document.getElementById('maxNum').value);
+    minNum = Number(document.getElementById('minNum').value);
     testType = document.getElementById('testType').value;
     setTestType(testType);
-    decLen = document.getElementById('decimalLength').value;
+    decLen = Number(document.getElementById('decimalLength').value);
     if (repeatQuestion.value === 'Yes') {
         repQ = true;
     } else {
@@ -73,6 +73,8 @@ const generateQuestion = () => {
     let numTwo = randInt(minNum, maxNum);
     let strParam = '';
     let numParam = 0;
+    let rem = 0;
+    let floor = 0;
 
     switch (testType) {
         
@@ -101,6 +103,12 @@ const generateQuestion = () => {
 
             strParam = `${numOne} / ${numTwo}`;
             numParam = numOne / numTwo;
+            floor = Math.floor(numParam);
+            rem = numParam - floor;
+            if ((rem.toString()).length > (decLen+2)) {
+                numParam = parseFloat(numParam.toFixed(decLen));
+            }
+
             return {strParam, numParam};
     }
 }
