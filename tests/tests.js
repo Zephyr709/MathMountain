@@ -32,7 +32,7 @@ let time2 = 0;
 
 //Functions
 const randInt = (min, max) => {
-    // A proper random integer function; min/max inclusive. credit: W3Schools.com
+    // A proper random integer function; min/max inclusive. 
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
@@ -41,8 +41,10 @@ const getTestParameters = () => {
     maxNum = Number(document.getElementById('maxNum').value);
     minNum = Number(document.getElementById('minNum').value);
     testType = document.getElementById('testType').value;
-    setTestType(testType);
     decLen = Number(document.getElementById('decimalLength').value);
+
+    setTestType(testType);
+
     if (repeatQuestion.value === 'Yes') {
         repQ = true;
     } else {
@@ -193,6 +195,7 @@ const generateTestResults = () => {
     percentScore = parseFloat(((correctQs/numQs) * 100).toFixed(1));
     activeTest.style.display = 'none';
     completeTest.style.display = 'flex';
+
     if (percentScore >= 90) {
         color = 'LightGreen';
     } else if (percentScore >= 80) {
@@ -206,6 +209,7 @@ const generateTestResults = () => {
     } else {
         color = 'Red';
     }
+
     testResults.innerHTML = `
     You Scored: % <span style="color:${color}">${percentScore}</span> <br>
     Correct Questions: ${correctQs}/${numQs} <br>
@@ -232,9 +236,11 @@ generateButton.addEventListener('click', (event) => {
     document.getElementById("test-container").style.display = 'block';
     getTestParameters();
     resetTest();
+
     let {strParam,numParam} = generateQuestion();
     strQuestion = strParam;
     answer = numParam;
+
     setQuestionPrompt(strQuestion, qCounter, numQs);
     if (qCounter === 1) {
         time1 = Date.now();
@@ -276,6 +282,7 @@ enterAnswer.addEventListener('keyup', (event) => {
 });
 
 submitButton.addEventListener('click', (event) => {
+    event.preventDefault();
     errorPrompt.innerHTML = '';
 
         if (enterAnswer.value === ''){
@@ -301,5 +308,28 @@ submitButton.addEventListener('click', (event) => {
             answer = numParam;
             setQuestionPrompt(strQuestion, qCounter, numQs);
         }
+
+});
+
+newTest.addEventListener('click', (event) => {
+    event.preventDefault();
+    document.getElementById("test-container").style.display = 'none';s
+
+
+});
+
+restartTest.addEventListener('click', (event) => {
+    event.preventDefault();
+    resetTest();
+
+    let {strParam,numParam} = generateQuestion();
+    strQuestion = strParam;
+    answer = numParam;
+
+    setQuestionPrompt(strQuestion, qCounter, numQs);
+    if (qCounter === 1) {
+        time1 = Date.now();
+    }
+
 
 });

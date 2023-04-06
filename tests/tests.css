@@ -4,9 +4,11 @@
 section h2 {
     text-align: center;
 }
+
 section p {
     border-radius: 10px;
 }
+
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -37,6 +39,7 @@ button:hover {
     margin:auto;
     height:50px;
 }
+
 .flexgrow {
     flex-grow: 1;
     text-align: center;
@@ -68,6 +71,7 @@ button:hover {
     
     
 }
+
 /* || Test Styles */
 #test-window {
     margin: auto;
@@ -131,6 +135,7 @@ button:hover {
     border:none;
     padding:5px;
 }
+
 #enterAnswer {
     width:75px;
     border-radius: 10px;
@@ -154,13 +159,20 @@ button:hover {
     flex-flow:row;
     justify-content: space-around;
 }
+
 #testResults {
     text-align: left;
     line-height: 2;
 }
+
 #newTest, #restartTest {
     width:150px;
     height:40px
+}
+
+#errorPrompt {
+    color: indianred;
+    font-weight: bold;
 }
 
 /* || Tests Options styles */
