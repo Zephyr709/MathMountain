@@ -30,7 +30,7 @@ button:hover {
 }
 
 /* || Classes */
-.options {
+.presetOptions, .moreOptions, .options {
     flex-grow: 1;
     border: 1px solid;
     border-radius: 10px;
@@ -38,6 +38,10 @@ button:hover {
     text-align: center;
     margin:auto;
     height:50px;
+}
+
+.moreOptions {
+    display:none;
 }
 
 .flexgrow {

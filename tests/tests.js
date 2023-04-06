@@ -15,6 +15,8 @@ const completeTest = document.getElementById('completeTest');
 const testResults = document.getElementById('testResults');
 const newTest = document.getElementById('newTest');
 const restartTest = document.getElementById('restartTest');
+const moreOptions = document.getElementById('moreOptions');
+const hideOptions = document.getElementById('hideOptions');
 
 //Variables
 let numQs, maxNum, minNum = 0;
