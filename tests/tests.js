@@ -313,7 +313,7 @@ submitButton.addEventListener('click', (event) => {
 
 newTest.addEventListener('click', (event) => {
     event.preventDefault();
-    document.getElementById("test-container").style.display = 'none';s
+    document.getElementById("test-container").style.display = 'none';
 
 
 });
