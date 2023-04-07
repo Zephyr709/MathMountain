@@ -19,6 +19,7 @@ const showAdvancedOptions = document.getElementById('moreOptions');
 const hideAdvancedOptions = document.getElementById('hideOptions');
 const moreOptions = document.getElementsByClassName('moreOptions');
 const presetOptions = document.getElementsByClassName('presetOptions');
+const testTypeInput = document.getElementById('testType');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -346,14 +347,44 @@ showAdvancedOptions.addEventListener('click', (event) => {
     for (let i = 0; i < presetOptions.length; i++) {
         presetOptions[i].style.display = 'none';
     }
+
+    if (document.getElementById('gradeDiv').style.display === 'none') {
+        if (testTypeInput.value === "Division") {
+            document.getElementById('decLen').style.display = 'block';
+        } else {
+            document.getElementById('decLen').style.display = 'none';
+        }
+    }
 });
 
 hideAdvancedOptions.addEventListener('click', (event) => {
     event.preventDefault();
+
     for (let i = 0; i < moreOptions.length; i++) {
         moreOptions[i].style.display= 'none';
     }
     for (let i = 0; i < presetOptions.length; i++) {
         presetOptions[i].style.display = 'block';
-    }  
+    }
+
+    if (document.getElementById('gradeDiv').style.display === 'none') {
+        if (testTypeInput.value === "Division") {
+            document.getElementById('decLen').style.display = 'block';
+        } else {
+            document.getElementById('decLen').style.display = 'none';
+        }
+    }
+});
+
+testTypeInput.addEventListener('click', (event) => {
+    event.preventDefault();
+
+    if (document.getElementById('gradeDiv').style.display === 'none') {
+        if (testTypeInput.value === "Division") {
+            document.getElementById('decLen').style.display = 'block';
+        } else {
+            document.getElementById('decLen').style.display = 'none';
+        }
+    }
+
 });
