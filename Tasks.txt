@@ -29,6 +29,7 @@ This is a place to contain a list of tasks to complete.
   - Make the nav bar int a hamburger menu
   - advanced options menu for tests
   - adjust main section width to 100% viewport width when viewport is less than (x) px wide
+  - change margin right for header to move it to the right side of the screen, to make room for the logo
   
 
   
