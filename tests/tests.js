@@ -15,8 +15,10 @@ const completeTest = document.getElementById('completeTest');
 const testResults = document.getElementById('testResults');
 const newTest = document.getElementById('newTest');
 const restartTest = document.getElementById('restartTest');
-const moreOptions = document.getElementById('moreOptions');
-const hideOptions = document.getElementById('hideOptions');
+const showAdvancedOptions = document.getElementById('moreOptions');
+const hideAdvancedOptions = document.getElementById('hideOptions');
+const moreOptions = document.getElementsByClassName('moreOptions');
+const presetOptions = document.getElementsByClassName('presetOptions');
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -334,4 +336,24 @@ restartTest.addEventListener('click', (event) => {
     }
 
 
+});
+
+showAdvancedOptions.addEventListener('click', (event) => {
+    event.preventDefault();
+    for (let i = 0; i < moreOptions.length; i++) {
+        moreOptions[i].style.display= 'block';
+    }
+    for (let i = 0; i < presetOptions.length; i++) {
+        presetOptions[i].style.display = 'none';
+    }
+});
+
+hideAdvancedOptions.addEventListener('click', (event) => {
+    event.preventDefault();
+    for (let i = 0; i < moreOptions.length; i++) {
+        moreOptions[i].style.display= 'none';
+    }
+    for (let i = 0; i < presetOptions.length; i++) {
+        presetOptions[i].style.display = 'block';
+    }  
 });
