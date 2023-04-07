@@ -274,7 +274,7 @@ const setPresets = () => {
             } else {
                 document.getElementById('maxNum').value = '50';
             }
-            document.getElementById('minNum').value = '0';           
+            document.getElementById('minNum').value = '-25';           
             document.getElementById('decimalLength').value = '3';
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -287,7 +287,7 @@ const setPresets = () => {
             } else {
                 document.getElementById('maxNum').value = '75';
             }
-            document.getElementById('minNum').value = '0';           
+            document.getElementById('minNum').value = '-50';           
             document.getElementById('decimalLength').value = '3';
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -300,7 +300,7 @@ const setPresets = () => {
             } else {
                 document.getElementById('maxNum').value = '100';
             }
-            document.getElementById('minNum').value = '0';           
+            document.getElementById('minNum').value = '-100';           
             document.getElementById('decimalLength').value = '3';
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -387,12 +387,13 @@ submitButton.addEventListener('click', (event) => {
             setQuestionPrompt(strQuestion, qCounter, numQs);
         }
 
+        enterAnswer.focus();
+
 });
 
 newTest.addEventListener('click', (event) => {
     event.preventDefault();
     document.getElementById("test-container").style.display = 'none';
-
 
 });
 
