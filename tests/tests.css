@@ -215,8 +215,7 @@ button:hover {
     overflow: auto; 
     background-color: rgba(0,0,0,0.4);
 }
-  
-  /* Modal Content/Box */
+
 .modal-content {
     background-color: #293241;
     margin: 25% auto; 
@@ -231,11 +230,13 @@ button:hover {
     text-align: center;
     
 }
+
 .modal-content ol li {
     font-weight: bolder;
     color:white;
     list-style: upper-roman;
 }
+
 #close {
     color: #aaa;
     float: right;
