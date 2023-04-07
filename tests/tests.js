@@ -20,6 +20,8 @@ const hideAdvancedOptions = document.getElementById('hideOptions');
 const moreOptions = document.getElementsByClassName('moreOptions');
 const presetOptions = document.getElementsByClassName('presetOptions');
 const testTypeInput = document.getElementById('testType');
+const grade = document.getElementById('grade');
+
 
 //Variables
 let numQs, maxNum, minNum = 0;
@@ -387,4 +389,76 @@ testTypeInput.addEventListener('click', (event) => {
         }
     }
 
+});
+
+grade.addEventListener('click', (event) => {
+    event.preventDefault();
+    switch (grade.value) {
+        case '1':
+            document.getElementById('numQuestions').value = '10';
+            document.getElementById('maxNum').value = '10';
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '1';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'No';
+
+            return;
+        
+        case '2':
+            document.getElementById('numQuestions').value = '15';
+            document.getElementById('maxNum').value = '15';
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '1';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'No';
+            return;
+        
+        case '3':
+            document.getElementById('numQuestions').value = '20';
+            document.getElementById('maxNum').value = '25';
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '2';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'No';
+            return;
+
+        case '4':
+            document.getElementById('numQuestions').value = '25';
+            if (testType === 'Addition' || testType === 'Subtraction') {
+                document.getElementById('maxNum').value = '100';
+            } else {
+                document.getElementById('maxNum').value = '50';
+            }
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '3';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'Yes';
+            return;
+
+        case '5':
+            document.getElementById('numQuestions').value = '25';
+            if (testType === 'Addition' || testType === 'Subtraction') {
+                document.getElementById('maxNum').value = '250';
+            } else {
+                document.getElementById('maxNum').value = '75';
+            }
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '3';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'Yes';
+            return;
+
+        case '6':
+            document.getElementById('numQuestions').value = '25';
+            if (testType === 'Addition' || testType === 'Subtraction') {
+                document.getElementById('maxNum').value = '500';
+            } else {
+                document.getElementById('maxNum').value = '100';
+            }
+            document.getElementById('minNum').value = '0';           
+            document.getElementById('decimalLength').value = '3';
+            repeatQuestion.value = 'Yes';
+            negAnswers.value = 'Yes';
+            return;
+    }
 });
