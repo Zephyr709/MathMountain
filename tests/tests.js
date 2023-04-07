@@ -21,6 +21,9 @@ const moreOptions = document.getElementsByClassName('moreOptions');
 const presetOptions = document.getElementsByClassName('presetOptions');
 const testTypeInput = document.getElementById('testType');
 const grade = document.getElementById('grade');
+const errorList = document.getElementById('errorList');
+const modal = document.getElementById('errorModal');
+const close = document.getElementById('close');
 
 
 //Variables
@@ -308,13 +311,67 @@ const setPresets = () => {
     }
 }
 
+const validateInput = () => {
+    let errors = 0;
+
+    if(numQs < 1) {
+        let node = document.createElement('li');
+        let textNode = document.createTextNode('Number of questions is less than 1; you must have at least one question.')
+        node.appendChild(textNode);
+        errorList.appendChild(node);
+        errors += 1;
+    }
+    if(numQs > 100) {
+        let node = document.createElement('li');
+        let textNode = document.createTextNode('Number of questions is greater than 100; 100 is the maximum number of questions.');
+        node.appendChild(textNode);
+        errorList.appendChild(node);
+
+        errors += 1;
+    }
+    if(maxNum <= minNum) {
+        let node = document.createElement('li');
+        let textNode = document.createTextNode('The highest number must be greater than the lowest number.');
+        node.appendChild(textNode);
+        errorList.appendChild(node);
+
+        errors += 1;
+    }
+    if(maxNum > 1000) {
+        let node = document.createElement('li');
+        let textNode = document.createTextNode('Highest number is greater than 1000; 1000 is the highest allowed number.');
+        node.appendChild(textNode);
+        errorList.appendChild(node);
+
+        errors += 1;
+    }
+    if(minNum < -1000) {
+        let node = document.createElement('li');
+        let textNode = document.createTextNode('Lowest number is less than -1000; -1000 is the lowest allowed number.');
+        node.appendChild(textNode);
+        errorList.appendChild(node);
+
+        errors += 1;
+    }
+
+    if(errors > 0){
+        modal.style.display = 'block';
+        return true;
+    } else {
+        return false;
+    }
+}
+
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
-    document.getElementById("test-container").style.display = 'block';
     getTestParameters();
+    if (validateInput()){
+        return;
+    }
     resetTest();
-
+    document.getElementById("test-container").style.display = 'block';
+    
     let {strParam,numParam} = generateQuestion();
     strQuestion = strParam;
     answer = numParam;
@@ -467,4 +524,16 @@ testTypeInput.addEventListener('click', (event) => {
 grade.addEventListener('click', (event) => {
     event.preventDefault();
     setPresets();
+});
+
+window.addEventListener('click', (event) => {
+    if(event.target === modal) {
+        modal.style.display = 'none';
+        errorList.innerHTML = '';
+    }
+});
+
+close.addEventListener('click', (event) => {
+    modal.style.display = 'none';
+    errorList.innerHTML = '';
 });
