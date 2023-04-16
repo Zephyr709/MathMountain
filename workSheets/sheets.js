@@ -55,7 +55,7 @@ const getTestParameters = () => {
 
 const setTestType = (type) => {
     testType = type;
-    testHeader.innerHTML = testType;
+    
 }
 
 const generateQuestion = () => {
@@ -269,7 +269,7 @@ generateButton.addEventListener('click', (event) => {
     }
 
     practiceSheet.innerHTML = '';
-    document.getElementById("practiceSheet").style.display = 'block';
+    document.getElementById("practiceSheet").style.display = 'flex';
 
     for (let i = 0; i < numQs; i++) {
         let {strParam,numParam} = generateQuestion();
