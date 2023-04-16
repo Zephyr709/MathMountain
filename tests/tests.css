@@ -109,7 +109,6 @@ button:hover {
 
 /* || Tests Log styles */
 #log {
-    grid-area: log;
     border-radius: 0px 0px 25px 25px;
     overflow: auto;
     display: flex;

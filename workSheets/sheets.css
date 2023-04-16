@@ -9,6 +9,10 @@ section p {
     border-radius: 10px;
 }
 
+section span {
+    text-decoration: underline;
+}
+
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -75,7 +79,26 @@ button:hover {
 }
 
 /* || Sheet Styles */
+#practiceSheet {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 10px;
+}
 
+#practiceSheet div,p {
+    border: 3px solid #ee6c4d;
+    padding:10px;
+    color:white;
+    text-align: right;
+}
+
+#practiceSheet p {
+    border-radius: 15px;
+    flex-grow: 1;
+}
 /* || Options styles */
 
 #test-options {
