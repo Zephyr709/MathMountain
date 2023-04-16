@@ -9,6 +9,11 @@ section p {
     border-radius: 10px;
 }
 
+input {
+    border:none;
+    padding:5px;
+}
+
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

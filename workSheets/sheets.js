@@ -12,6 +12,7 @@ const grade = document.getElementById('grade');
 const errorList = document.getElementById('errorList');
 const modal = document.getElementById('errorModal');
 const close = document.getElementById('close');
+const practiceSheet = document.getElementById('practiceSheet');
 
 
 //Variables
@@ -56,6 +57,7 @@ const setTestType = (type) => {
     testType = type;
     testHeader.innerHTML = testType;
 }
+
 const generateQuestion = () => {
     let numOne = randInt(minNum, maxNum);
     let numTwo = randInt(minNum, maxNum);
@@ -67,17 +69,23 @@ const generateQuestion = () => {
     switch (testType) {
         
         case 'Addition':
-            strParam = `${numOne} + ${numTwo}`;
+            strParam = `${numOne} <br>
+            <u>+ ${numTwo}</u><br>
+            <u>__________</u> `;
             numParam = numOne + numTwo;
             return {strParam, numParam};
             
         case 'Subtraction':
-            strParam = `${numOne} - ${numTwo}`;
+            strParam = `${numOne} <br>
+            <u>- ${numTwo}</u><br>
+            <u>__________</u> `;
             numParam = numOne - numTwo;
             return {strParam, numParam};
 
         case 'Multiplication':
-            strParam = `${numOne} x ${numTwo}`;
+            strParam = `${numOne} <br>
+            <u>X ${numTwo}</u><br>
+            <u>__________</u> `;
             numParam = numOne * numTwo;
             return {strParam, numParam};
 
@@ -89,8 +97,11 @@ const generateQuestion = () => {
 
             [numOne, numTwo] = simpleDivisor(numOne, numTwo); 
 
-            strParam = `${numOne} / ${numTwo}`;
+            strParam = `${numOne} <br>
+            <u>&divide ${numTwo}</u><br>
+            <u>__________</u> `;
             numParam = numOne / numTwo;
+
             floor = Math.floor(numParam);
             rem = numParam - floor;
             if ((rem.toString()).length > (decLen+2)) {
@@ -248,6 +259,7 @@ const validateInput = () => {
     }
 }
 
+
 //Event handlers
 generateButton.addEventListener('click', (event) => {
     event.preventDefault();
@@ -255,16 +267,23 @@ generateButton.addEventListener('click', (event) => {
     if (validateInput()){
         return;
     }
-    resetTest();
-    document.getElementById("test-container").style.display = 'block';
-    
-    let {strParam,numParam} = generateQuestion();
-    strQuestion = strParam;
-    answer = numParam;
 
-    setQuestionPrompt(strQuestion, qCounter, numQs);
-    if (qCounter === 1) {
-        time1 = Date.now();
+    practiceSheet.innerHTML = '';
+    document.getElementById("practiceSheet").style.display = 'block';
+
+    for (let i = 0; i < numQs; i++) {
+        let {strParam,numParam} = generateQuestion();
+        strQuestion = strParam;
+        answer = numParam;
+        
+        practiceSheet.innerHTML += `
+        <p class="question">
+                        <span class="questionNum">#${i+1}</span> 
+                        ${strParam}
+                    </p>
+        `
+
+
     }
    
 });

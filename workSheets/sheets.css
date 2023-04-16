@@ -9,9 +9,15 @@ section p {
     border-radius: 10px;
 }
 
-#intro {
-    text-align: left;
+input {
+    border:none;
+    padding:5px;
 }
+
+#intro {
+    text-align: center;
+}
+
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
