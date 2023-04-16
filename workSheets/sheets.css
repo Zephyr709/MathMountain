@@ -13,6 +13,9 @@ section span {
     text-decoration: underline;
 }
 
+#intro {
+    text-align: left;
+}
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
