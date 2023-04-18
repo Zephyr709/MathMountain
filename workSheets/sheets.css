@@ -113,6 +113,8 @@ button:hover {
 
 /* || Sheet Styles */
 #practiceSheet {
+    width: 60vw;
+    margin:auto;
     display: none;
     flex-flow: row wrap;
     align-content: stretch;
@@ -231,5 +233,9 @@ button:hover {
     p {
         color:black;
         
+    }
+    
+    #practiceSheet {
+        width:auto !important;
     }
 }
