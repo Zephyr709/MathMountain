@@ -239,3 +239,9 @@ button:hover {
         width:auto !important;
     }
 }
+
+@media screen and (max-width: 1000px) {
+    #practiceSheet {
+        width: auto !important;
+    }
+}
