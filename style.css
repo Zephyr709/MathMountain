@@ -14,7 +14,6 @@ color 5: #293241 dark grey
 }
 html {
     min-width:525px;
-    line-height: 2;
     font-size:18px;
 }
 
@@ -23,6 +22,10 @@ body {
     background-color: #293241;
     color:#ee6c4d;
     
+}
+
+p {
+    line-height: 2;
 }
 
 /* || Header Styles */
