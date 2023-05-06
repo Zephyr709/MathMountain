@@ -48,19 +48,7 @@
                     When your ready click the 'Generate' button and your test will appear.</p>
                 
                 <div id="test-options">
-                    <div class="moreOptions">
-                        <label for="numQuestions"> Number of Questions:</label>
-                        <input id="numQuestions" name="numQuestions" value="25" type="number" min="1" max="100" />
-                    </div>
-                    <div class="moreOptions">
-                        <label for="minNum">Lowest Number:</label>
-                        <input id="minNum" name="smallestNum" value="0" type="number" />
-                    </div>
-                    <div class="moreOptions">
-                        <label for="maxNum">Highest Number:</label>
-                        <input id="maxNum" name="largestNum" value="10" type="number" />
-                    </div>
-                    <div id='gradeDiv' class="presetOptions">
+                    <div id='gradeDiv' class="options">
                         <label for="grade">Grade Level:</label>
                         <select id="grade" name="grade">
                             <option value="1">1</option>
@@ -80,14 +68,28 @@
                             <option value="Division">Division</option>
                         </select>
                     </div>  
-                    <div id="decLen" class="moreOptions">
-                        <label for="decimalLength">Decimal Places:</label>
-                        <select id="decimalLength" name="decimalLength">
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3" selected>3</option>
-                        </select>
+                    <div class="presetOptions static">
+                        <button class="button" id="moreOptions" type="button">Show Advanced Options</button>
                     </div>
+                    <div class="moreOptions static">
+                        <button class="button" id="hideOptions" type="button">Hide Advanced Options</button>
+                    </div>
+                    <div class="options static">
+                        <button class="button" id="generateButton" type="button">Generate</button>
+                    </div>
+                    <div class="moreOptions">
+                        <label for="numQuestions"> Number of Questions:</label>
+                        <input id="numQuestions" name="numQuestions" value="25" type="number" min="1" max="100" />
+                    </div>
+                    <div class="moreOptions">
+                        <label for="minNum">Lowest Number:</label>
+                        <input id="minNum" name="smallestNum" value="0" type="number" />
+                    </div>
+                    <div class="moreOptions">
+                        <label for="maxNum">Highest Number:</label>
+                        <input id="maxNum" name="largestNum" value="10" type="number" />
+                    </div>
+                    
                     <div class="moreOptions">
                         <label for="repeatQuestion">Repeated Questions?</label>
                         <select id="repeatQuestion" name="repeatQuestion">
@@ -102,15 +104,7 @@
                             <option value="no" selected>No</option>
                         </select>
                     </div>
-                    <div class="presetOptions">
-                        <button class="button" id="moreOptions" type="button">Show Advanced Options</button>
-                    </div>
-                    <div class="moreOptions">
-                        <button class="button" id="hideOptions" type="button">Hide Advanced Options</button>
-                    </div>
-                    <div class="options">
-                        <button class="button" id="generateButton" type="button">Generate</button>
-                    </div>
+                    
                 </div>
 
                 <div id="test-container">

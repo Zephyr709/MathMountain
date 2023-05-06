@@ -9,7 +9,6 @@ const errorPrompt = document.getElementById('errorPrompt');
 const submitButton = document.getElementById('submitButton');
 const repeatQuestion = document.getElementById('repeatQuestion');
 const negAnswers = document.getElementById('negAnswers');
-const decPlaces = document.getElementById('decPlaces');
 const activeTest = document.getElementById('activeTest');
 const completeTest = document.getElementById('completeTest');
 const testResults = document.getElementById('testResults');
@@ -35,7 +34,7 @@ let strQuestion = '';
 let answer = 0;
 let negA = false;
 let repQ = true;
-let decLen = 0;
+let decLen = 2;
 let correctQs = 0;
 let time1 = 0;
 let time2 = 0;
@@ -51,7 +50,7 @@ const getTestParameters = () => {
     maxNum = Number(document.getElementById('maxNum').value);
     minNum = Number(document.getElementById('minNum').value);
     testType = document.getElementById('testType').value;
-    decLen = Number(document.getElementById('decimalLength').value);
+
 
     setTestType(testType);
 
@@ -246,7 +245,7 @@ const setPresets = () => {
             document.getElementById('numQuestions').value = '10';
             document.getElementById('maxNum').value = '10';
             document.getElementById('minNum').value = '0';           
-            document.getElementById('decimalLength').value = '1';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'No';
 
@@ -256,7 +255,7 @@ const setPresets = () => {
             document.getElementById('numQuestions').value = '15';
             document.getElementById('maxNum').value = '15';
             document.getElementById('minNum').value = '0';           
-            document.getElementById('decimalLength').value = '1';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'No';
             return;
@@ -265,7 +264,7 @@ const setPresets = () => {
             document.getElementById('numQuestions').value = '20';
             document.getElementById('maxNum').value = '25';
             document.getElementById('minNum').value = '0';           
-            document.getElementById('decimalLength').value = '2';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'No';
             return;
@@ -278,7 +277,7 @@ const setPresets = () => {
                 document.getElementById('maxNum').value = '50';
             }
             document.getElementById('minNum').value = '-25';           
-            document.getElementById('decimalLength').value = '3';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
             return;
@@ -291,7 +290,7 @@ const setPresets = () => {
                 document.getElementById('maxNum').value = '75';
             }
             document.getElementById('minNum').value = '-50';           
-            document.getElementById('decimalLength').value = '3';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
             return;
@@ -304,7 +303,7 @@ const setPresets = () => {
                 document.getElementById('maxNum').value = '100';
             }
             document.getElementById('minNum').value = '-100';           
-            document.getElementById('decimalLength').value = '3';
+            
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
             return;
@@ -478,14 +477,6 @@ showAdvancedOptions.addEventListener('click', (event) => {
     for (let i = 0; i < presetOptions.length; i++) {
         presetOptions[i].style.display = 'none';
     }
-
-    if (document.getElementById('gradeDiv').style.display === 'none') {
-        if (testTypeInput.value === "Division") {
-            document.getElementById('decLen').style.display = 'block';
-        } else {
-            document.getElementById('decLen').style.display = 'none';
-        }
-    }
 });
 
 hideAdvancedOptions.addEventListener('click', (event) => {
@@ -497,29 +488,8 @@ hideAdvancedOptions.addEventListener('click', (event) => {
     for (let i = 0; i < presetOptions.length; i++) {
         presetOptions[i].style.display = 'block';
     }
-
-    if (document.getElementById('gradeDiv').style.display === 'none') {
-        if (testTypeInput.value === "Division") {
-            document.getElementById('decLen').style.display = 'block';
-        } else {
-            document.getElementById('decLen').style.display = 'none';
-        }
-    }
 });
 
-testTypeInput.addEventListener('click', (event) => {
-    event.preventDefault();
-
-    if (document.getElementById('gradeDiv').style.display === 'none') {
-        grade.value = '';
-        if (testTypeInput.value === "Division") {
-            document.getElementById('decLen').style.display = 'block';
-        } else {
-            document.getElementById('decLen').style.display = 'none';
-        }
-    }
-    setPresets();
-});
 
 grade.addEventListener('click', (event) => {
     event.preventDefault();

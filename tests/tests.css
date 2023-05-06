@@ -80,6 +80,11 @@ button:hover {
     
 }
 
+.static {
+    min-width: 250px;
+    max-width: 300px;
+}
+
 /* || Test Styles */
 #test-window {
     margin: auto;
