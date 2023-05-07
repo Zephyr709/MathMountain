@@ -38,6 +38,7 @@ let decLen = 2;
 let correctQs = 0;
 let time1 = 0;
 let time2 = 0;
+let simpleStr = '';
 
 //Functions
 const randInt = (min, max) => {
@@ -75,8 +76,9 @@ const setTestType = (type) => {
 
 const setQuestionPrompt = (strQuestion, qNum, numQs) => {
     questionPrompt.innerHTML = `
-        Question #${qNum}/${numQs}: ${strQuestion}
+     ${strQuestion}
     `;
+    document.getElementById('questionNum').innerHTML = `#${qCounter}`
 }
 
 const generateQuestion = () => {
@@ -86,23 +88,30 @@ const generateQuestion = () => {
     let numParam = 0;
     let rem = 0;
     let floor = 0;
+    let simpleString = '';
 
     switch (testType) {
         
         case 'Addition':
-            strParam = `${numOne} + ${numTwo}`;
+            strParam = `<span style="display: inline-block; text-align: right;">${numOne}<span> <br>
+            <span style="display: inline-block; text-align: right;"><u>+ ${numTwo}</u></span><br>`;
+            simpleString = `${numOne} + ${numTwo}`
             numParam = numOne + numTwo;
-            return {strParam, numParam};
+            return {strParam, numParam, simpleString};
             
         case 'Subtraction':
-            strParam = `${numOne} - ${numTwo}`;
+            strParam = `<span style="display: inline-block; text-align: right;">${numOne}<span> <br>
+            <span style="display: inline-block; text-align: right;"><u>- ${numTwo}</u></span>`;
+            simpleString = `${numOne} - ${numTwo}`
             numParam = numOne - numTwo;
-            return {strParam, numParam};
+            return {strParam, numParam, simpleString};
 
         case 'Multiplication':
-            strParam = `${numOne} x ${numTwo}`;
+            strParam = `<span style="display: inline-block; text-align: right;">${numOne}</span> <br>
+            <span style="display: inline-block; text-align: right;"><u>X ${numTwo}</u></span>`;
+            simpleString = `${numOne} X ${numTwo}`
             numParam = numOne * numTwo;
-            return {strParam, numParam};
+            return {strParam, numParam, simpleString};
 
         case 'Division':
             while (numTwo === 0){
@@ -112,7 +121,9 @@ const generateQuestion = () => {
 
             [numOne, numTwo] = simpleDivisor(numOne, numTwo); 
 
-            strParam = `${numOne} / ${numTwo}`;
+            strParam = `<span style="display: inline-block; text-align: right;">${numOne}</span> <br>
+            <span style="display: inline-block; text-align: right;"><u>&divide ${numTwo}</u></span>`;
+            simpleString = `${numOne} &divide ${numTwo}`
             numParam = numOne / numTwo;
             floor = Math.floor(numParam);
             rem = numParam - floor;
@@ -120,7 +131,7 @@ const generateQuestion = () => {
                 numParam = parseFloat(numParam.toFixed(decLen));
             }
 
-            return {strParam, numParam};
+            return {strParam, numParam, simpleString};
     }
 }
 
@@ -155,17 +166,17 @@ const updateLog = () => {
             correctQs += 1;
             logSection.innerHTML = `
             <p>
-                Question ${qCounter}/${numQs}: ${strQuestion} <br>
-                <span style="color:LightGreen;">Your Answer: ${userAnswer}</span> <br>
-                Correct Answer: ${answer} 
+                <span id="questionNumber">#${qCounter}</span>
+                <span style="color:LightGreen;">Your Answer: ${userAnswer} &#10003</span> <br>
+                ${simpleStr} = ${answer} 
             </p>`;
             
             } else {
                 logSection.innerHTML = `
             <p>
-                Question ${qCounter}/${numQs}: ${strQuestion} <br>
-                <span style="color:IndianRed;">Your Answer: ${userAnswer}</span> <br>
-                Correct Answer: ${answer} 
+                <span id="questionNumber">#${qCounter}</span>
+                <span style="color:red;">Your Answer: ${userAnswer} &#10007</span> <br>
+                ${simpleStr} = ${answer} 
             </p>`;
             }
     } else {
@@ -173,16 +184,16 @@ const updateLog = () => {
             correctQs += 1;
             logSection.innerHTML = `
             <p>
-                Question ${qCounter}/${numQs}: ${strQuestion} <br>
-                <span style="color:LightGreen;">Your Answer: ${userAnswer}</span> <br>
-                Correct Answer: ${answer} 
+                <span id="questionNumber">#${qCounter}</span>
+                <span style="color:LightGreen;">Your Answer: ${userAnswer} &#10003</span> <br>
+                ${simpleStr} = ${answer}
             </p>` + logSection.innerHTML;
             } else {
                 logSection.innerHTML = `
             <p>
-                Question ${qCounter}/${numQs}: ${strQuestion} <br>
-                <span style="color:IndianRed;">Your Answer: ${userAnswer}</span> <br>
-                Correct Answer: ${answer} 
+                <span id="questionNumber">#${qCounter}</span>
+                <span style="color:red;">Your Answer: ${userAnswer} &#10007</span> <br>
+                ${simpleStr} = ${answer} 
             </p>` + logSection.innerHTML;
             }
     }
@@ -221,7 +232,7 @@ const generateTestResults = () => {
 
     testResults.innerHTML = `
     You Scored: % <span style="color:${color}">${percentScore}</span> <br>
-    Correct Questions: ${correctQs}/${numQs} <br>
+    Correct Questions: ${correctQs} / ${numQs} <br>
     Time to Complete: ${calcTime()} <br>
     `
 
@@ -272,11 +283,11 @@ const setPresets = () => {
         case '4':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '100';
-            } else {
                 document.getElementById('maxNum').value = '50';
+            } else {
+                document.getElementById('maxNum').value = '25';
             }
-            document.getElementById('minNum').value = '-25';           
+            document.getElementById('minNum').value = '0';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -285,11 +296,11 @@ const setPresets = () => {
         case '5':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '250';
-            } else {
                 document.getElementById('maxNum').value = '75';
+            } else {
+                document.getElementById('maxNum').value = '30';
             }
-            document.getElementById('minNum').value = '-50';           
+            document.getElementById('minNum').value = '-10';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -298,11 +309,11 @@ const setPresets = () => {
         case '6':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '500';
-            } else {
                 document.getElementById('maxNum').value = '100';
+            } else {
+                document.getElementById('maxNum').value = '50';
             }
-            document.getElementById('minNum').value = '-100';           
+            document.getElementById('minNum').value = '-25';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -371,9 +382,10 @@ generateButton.addEventListener('click', (event) => {
     resetTest();
     document.getElementById("test-container").style.display = 'block';
     
-    let {strParam,numParam} = generateQuestion();
+    let {strParam,numParam, simpleString} = generateQuestion();
     strQuestion = strParam;
     answer = numParam;
+    simpleStr = simpleString;
 
     setQuestionPrompt(strQuestion, qCounter, numQs);
     if (qCounter === 1) {
@@ -471,23 +483,16 @@ restartTest.addEventListener('click', (event) => {
 
 showAdvancedOptions.addEventListener('click', (event) => {
     event.preventDefault();
-    for (let i = 0; i < moreOptions.length; i++) {
-        moreOptions[i].style.display= 'block';
-    }
-    for (let i = 0; i < presetOptions.length; i++) {
-        presetOptions[i].style.display = 'none';
-    }
+    document.getElementById("xtraOptions").style.display = 'flex';
+    document.getElementById("showOptions").style.display = 'none';
+    document.getElementById("lessOptions").style.display = 'block';
 });
 
 hideAdvancedOptions.addEventListener('click', (event) => {
     event.preventDefault();
-
-    for (let i = 0; i < moreOptions.length; i++) {
-        moreOptions[i].style.display= 'none';
-    }
-    for (let i = 0; i < presetOptions.length; i++) {
-        presetOptions[i].style.display = 'block';
-    }
+    document.getElementById("xtraOptions").style.display = 'none';
+    document.getElementById("showOptions").style.display = 'block';
+    document.getElementById("lessOptions").style.display = 'none';
 });
 
 

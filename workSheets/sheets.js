@@ -169,11 +169,11 @@ const setPresets = () => {
         case '4':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '100';
-            } else {
                 document.getElementById('maxNum').value = '50';
+            } else {
+                document.getElementById('maxNum').value = '25';
             }
-            document.getElementById('minNum').value = '-25';           
+            document.getElementById('minNum').value = '0';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -182,11 +182,11 @@ const setPresets = () => {
         case '5':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '250';
-            } else {
                 document.getElementById('maxNum').value = '75';
+            } else {
+                document.getElementById('maxNum').value = '30';
             }
-            document.getElementById('minNum').value = '-50';           
+            document.getElementById('minNum').value = '-10';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -195,11 +195,11 @@ const setPresets = () => {
         case '6':
             document.getElementById('numQuestions').value = '25';
             if (testTypeInput.value === 'Addition' || testTypeInput.value === 'Subtraction') {
-                document.getElementById('maxNum').value = '500';
-            } else {
                 document.getElementById('maxNum').value = '100';
+            } else {
+                document.getElementById('maxNum').value = '50';
             }
-            document.getElementById('minNum').value = '-100';           
+            document.getElementById('minNum').value = '-25';           
             
             repeatQuestion.value = 'Yes';
             negAnswers.value = 'Yes';
@@ -289,28 +289,17 @@ generateButton.addEventListener('click', (event) => {
 
 showAdvancedOptions.addEventListener('click', (event) => {
     event.preventDefault();
-    for (let i = 0; i < moreOptions.length; i++) {
-        moreOptions[i].style.display= 'block';
-    }
-    for (let i = 0; i < presetOptions.length; i++) {
-        presetOptions[i].style.display = 'none';
-    }
-
-
+    document.getElementById("xtraOptions").style.display = 'flex';
+    document.getElementById("showOptions").style.display = 'none';
+    document.getElementById("lessOptions").style.display = 'block';
 });
 
 hideAdvancedOptions.addEventListener('click', (event) => {
     event.preventDefault();
-
-    for (let i = 0; i < moreOptions.length; i++) {
-        moreOptions[i].style.display= 'none';
-    }
-    for (let i = 0; i < presetOptions.length; i++) {
-        presetOptions[i].style.display = 'block';
-    }
-
+    document.getElementById("xtraOptions").style.display = 'none';
+    document.getElementById("showOptions").style.display = 'block';
+    document.getElementById("lessOptions").style.display = 'none';
 });
-
 
 grade.addEventListener('click', (event) => {
     event.preventDefault();

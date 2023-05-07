@@ -14,6 +14,14 @@ input {
     padding:5px;
 }
 
+#intro {
+    margin:8px;
+    text-align: left;
+    max-width: 75% ;
+    border:none;
+    
+}
+
 /* Method to hide arrows on number inputs */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -43,10 +51,6 @@ button:hover {
     text-align: center;
     margin:auto;
     height:50px;
-}
-
-.moreOptions {
-    display:none;
 }
 
 .flexgrow {
@@ -87,9 +91,7 @@ button:hover {
 
 /* || Test Styles */
 #test-window {
-    margin: auto;
-    max-width: 90%;
-    width: 60vw;
+    margin: 8px;
     min-height: 70vh;
     border-radius: 25px;
     padding:10px;
@@ -99,7 +101,7 @@ button:hover {
 }
 
 #test-window div,p {
-    border: 3px solid #ee6c4d;
+    border: 1px solid #ee6c4d;
     padding:10px;
     color:white;
     text-align: center;
@@ -152,15 +154,20 @@ button:hover {
 
 #enterAnswer {
     width:75px;
+    height:36px;
+
     border-radius: 10px;
     text-align: center;
+    font-size: inherit;
 }
 
 #submitButton {
     padding:5px;
+    height: 36px;
     border-radius: 10px;
     border-color: rgba(0,0,0,0);
     font-weight: bold;
+    font-size: inherit;
 }
 
 #activeTest {
@@ -192,6 +199,17 @@ button:hover {
     font-weight: bold;
 }
 
+#questionNumber {
+    float:left;
+}
+
+#questionNum {
+    float:left;
+}
+
+#questionPrompt {
+    margin:auto;
+}
 /* || Tests Options styles */
 
 #test-options {
@@ -213,6 +231,35 @@ button:hover {
     padding: 3px;
     border-radius: 10px;
     
+}
+
+#xtraOptions {
+    padding:10px;
+    margin: 10px;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap:20px;
+
+}
+#xtraOptions input {
+    width:40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#xtraOptions select {
+    padding: 3px;
+    border-radius: 10px;
+    
+}
+
+#showOptions {
+    display:block;
+}
+
+#lessOptions {
+    display:none;
 }
 
 /* || Modal Styles*/

@@ -15,9 +15,12 @@ input {
 }
 
 #intro {
-    text-align: center;
+    margin:8px;
+    text-align: left;
+    max-width: 75% ;
+    border:none;
+    
 }
-
 #printHeader {
     text-align: center;
     display:none;
@@ -54,9 +57,6 @@ button:hover {
     height:50px;
 }
 
-.moreOptions {
-    display:none;
-}
 
 .centerDiv{
     display:flex;
@@ -111,6 +111,11 @@ button:hover {
     line-height: 1.5;
 }
 
+.static {
+    min-width: 250px;
+    max-width: 300px;
+}
+
 /* || Sheet Styles */
 #practiceSheet {
     width: 60vw;
@@ -159,6 +164,45 @@ button:hover {
     padding: 3px;
     border-radius: 10px;
     
+}
+
+#primaryAction {
+    padding:10px;
+    margin: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center ;
+    gap:20px;
+    max-width: 600px;
+}
+
+#xtraOptions {
+    padding:10px;
+    margin: 10px;
+    display: none;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap:20px;
+
+}
+#xtraOptions input {
+    width:40px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#xtraOptions select {
+    padding: 3px;
+    border-radius: 10px;
+    
+}
+
+#showOptions {
+    display:block;
+}
+
+#lessOptions {
+    display:none;
 }
 
 
@@ -219,10 +263,11 @@ button:hover {
     }
     main,section {
         width:auto;
-        min-height:900px;
+        min-height:850px;
         margin:auto;
         margin-top:10px;
-
+        margin-left:-10px !important;
+        margin-right: -10px !important;
     }
     div, main, section {
         border:none !important;
@@ -237,6 +282,14 @@ button:hover {
     
     #practiceSheet {
         width:auto !important;
+    }
+
+    #primaryAction {
+        display: none !important;
+    }
+    html {
+        line-height: 1 !important;
+        
     }
 }
 
