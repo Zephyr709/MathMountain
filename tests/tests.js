@@ -167,7 +167,7 @@ const updateLog = () => {
             logSection.innerHTML = `
             <p>
                 <span id="questionNumber">#${qCounter}</span>
-                <span style="color:LightGreen;">Your Answer: ${userAnswer} &#10003</span> <br>
+                <span style="color:Green;">Your Answer: ${userAnswer} &#10003</span> <br>
                 ${simpleStr} = ${answer} 
             </p>`;
             
@@ -185,7 +185,7 @@ const updateLog = () => {
             logSection.innerHTML = `
             <p>
                 <span id="questionNumber">#${qCounter}</span>
-                <span style="color:LightGreen;">Your Answer: ${userAnswer} &#10003</span> <br>
+                <span style="color:Green;">Your Answer: ${userAnswer} &#10003</span> <br>
                 ${simpleStr} = ${answer}
             </p>` + logSection.innerHTML;
             } else {
@@ -217,7 +217,7 @@ const generateTestResults = () => {
     completeTest.style.display = 'flex';
 
     if (percentScore >= 90) {
-        color = 'LightGreen';
+        color = 'Green';
     } else if (percentScore >= 80) {
         color = 'GreenYellow';
     } else if (percentScore >= 70) {
