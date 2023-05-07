@@ -495,6 +495,10 @@ hideAdvancedOptions.addEventListener('click', (event) => {
     document.getElementById("lessOptions").style.display = 'none';
 });
 
+document.getElementById('testType').addEventListener('click', (event) => {
+    event.preventDefault();
+    setPresets();
+});
 
 grade.addEventListener('click', (event) => {
     event.preventDefault();
