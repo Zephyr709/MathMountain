@@ -1,7 +1,7 @@
 # MathMountain
 Get to the website through here --> https://zephyr709.github.io/MathMountain/
 MathMountain aims to be a resource for students, parents, and teachers for grades 1-6. Through dynamically generated practice tests and work sheets users can enhance their knowledge and experience with all sorts of different math problems.
-
+![Math Mountain Homepage]()
 ## Test Your Skills
 Test your skills with dynamically generated tests. These can be preset tests respective to the difficulty level of the math being taught in each grade, by topic, or cumulative tests. These tests provide feedback about test scores, correct answers and they can even be customized to the type of math you wish to practice.
 
